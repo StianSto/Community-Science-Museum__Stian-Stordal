@@ -1,0 +1,24 @@
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+.hero__img {
+    width: 100%;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+.hero__text {
+    margin-left: 3%;
+    position: absolute;
+}
+
+.hero__text p {
+    margin: 0;
+    color: white;
+}
+
+.hero__text p:nth-child(3) {
+    color: var(--chem_green)
+}
