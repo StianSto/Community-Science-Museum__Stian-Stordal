@@ -13,7 +13,7 @@
     /* font styles */
     --font-size-h1: clamp(2.125rem, 6.8vw + 0.856rem, 6.25rem);
     --font-size-h2: clamp(1.875rem, 1.6vw + 1.475rem, 2.75rem);
-    --font-size-h3: clamp(1.25rem, 1.143vw + 0.964rem, 1.875rem);
+    --font-size-h3: clamp(1rem, 1.143vw + 0.964rem, 1.875rem);
     --font-size-copy: clamp(1.125rem, 0.686vw + 0.954rem, 1.5rem);
 
 }
