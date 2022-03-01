@@ -1,0 +1,72 @@
+h2 {
+  text-align: center;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+}
+
+.hero__img {
+  width: 100%;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.hero__text {
+  margin-left: 3%;
+  position: absolute;
+}
+
+.hero__text p {
+  margin: 0;
+  color: white;
+}
+
+.hero__text p:nth-child(3) {
+  color: var(--chem_green);
+}
+
+/* Exhibition tiles */
+
+.exhibition__container {
+  display: grid;
+  gap: 1%;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tile__img {
+  width: 100%;
+}
+
+.tile {
+  display: grid;
+  width: 100%;
+}
+
+.tile__img__container,
+.tile__descr {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+}
+
+.tile__descr {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  width: 100%;
+}
+
+.tile__icon {
+  width: 40%;
+}
+
+.tile__descr > * {
+  margin: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .exhibition__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
