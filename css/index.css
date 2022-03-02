@@ -44,7 +44,7 @@ h2 {
   width: 100%;
 }
 
-.tile__img__container,
+.tile__img,
 .tile__descr {
   grid-row: 1 / -1;
   grid-column: 1 / -1;
@@ -55,10 +55,12 @@ h2 {
   justify-self: center;
   text-align: center;
   width: 100%;
+  height: calc();
 }
 
 .tile__icon {
-  width: 40%;
+  width: clamp(50px, 17vw, 40%);
+  height: clamp(50px, 2vw, 30%);
 }
 
 .tile__descr > * {
@@ -70,3 +72,31 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
+body {
+  background-color:wheat;
+}
+
+/*  .tile__img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.exhibition-container {
+  display: flex;
+}
+
+.tile__descr {
+  text-align: center;
+}
+
+.tile {
+  height: clamp(150px, 20vw, 400px);
+}
+
+.tile__icon {
+
+} */
