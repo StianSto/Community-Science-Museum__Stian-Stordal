@@ -2,30 +2,32 @@ h2 {
   text-align: center;
 }
 
-.hero {
-  display: flex;
-  align-items: center;
-}
 
-.hero__img {
-  width: 100%;
-  min-height: 400px;
-  object-fit: cover;
-}
+/* hero */
+  .hero {
+    display: flex;
+    align-items: center;
+  }
 
-.hero__text {
-  margin-left: 3%;
-  position: absolute;
-}
+  .hero__img {
+    width: 100%;
+    min-height: 400px;
+    object-fit: cover;
+  }
 
-.hero__text p {
-  margin: 0;
-  color: white;
-}
+  .hero__text {
+    margin-left: 3%;
+    position: absolute;
+  }
 
-.hero__text p:nth-child(3) {
-  color: var(--chem_green);
-}
+  .hero__text p {
+    margin: 0;
+    color: white;
+  }
+
+  .hero__text p:nth-child(3) {
+    color: var(--chem_green);
+  }
 
 /* Exhibition tiles */
 
@@ -35,68 +37,56 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.tile__img {
-  width: 100%;
-}
-
 .tile {
   display: grid;
+  background-size: cover;
   width: 100%;
 }
 
-.tile__img,
-.tile__descr {
-  grid-row: 1 / -1;
-  grid-column: 1 / -1;
+.tile__descr{
+
 }
+
+
+.tile--cosmology {background-image: url(/assets/images/img_cosmology_tile.jpg);}
+.tile--ecology {background-image: url(/assets/images/img_ecology_tile.jpg);}
+.tile--microbiology {background-image: url(/assets/images/img_microbiology_tile.jpg);}
+.tile--paleontology {background-image: url(/assets/images/img_paleontology_tile.jpg);}
+.tile--vr {background-image: url(/assets/images/img_vr_tile.jpg);}
+.tile--physics {background-image: url(/assets/images/img_physics_tile.jpg);}
 
 .tile__descr {
   align-self: center;
   justify-self: center;
   text-align: center;
   width: 100%;
-  height: calc();
+  height: 70%;
+  padding: 15% 0;
+  display: grid;
+  grid-template-rows: 1fr 30%;
 }
 
 .tile__icon {
-  width: clamp(50px, 17vw, 40%);
-  height: clamp(50px, 2vw, 30%);
+width: 45%;
 }
 
-.tile__descr > * {
-  margin: auto;
+.tile__descr h3 {
+  margin: 0 auto;
+}
+
+.tile__descr img {
+  place-self: center;
 }
 
 @media only screen and (min-width: 768px) {
   .exhibition__container {
+    margin: 0 auto;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-
-body {
-  background-color:wheat;
+@media only screen and (min-width: 1024px) {
+  .exhibition__container {
+    max-width: 70%;
+  }
 }
-
-/*  .tile__img {
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  object-fit: cover;
-}
-
-.exhibition-container {
-  display: flex;
-}
-
-.tile__descr {
-  text-align: center;
-}
-
-.tile {
-  height: clamp(150px, 20vw, 400px);
-}
-
-.tile__icon {
-
-} */
