@@ -1,10 +1,39 @@
-/* hero */
+/* general */
+.content-wrapper__homepage {
+  margin: 0 10px;
+}
+main section {
+  margin-bottom: 20%;
+}
+
+.upcoming-events > *:not(h2),
+.contactus > *:not(h2),
+.openinghours > *:not(h2) {
+  margin-left: 5%;
+}
+
+.content-wrapper_info {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8%;
+}
+
+.content-wrapper_bodycontent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%;
+}
+
+.content-wrapper_mapandinfo {
+  width: 100%;
+}
+
 @media only screen and (min-width: 1024px) {
-  .content-wrapper__homepage {
-    max-width: 70%;
-    margin: 0 auto;
+  .content-wrapper_info {
+    min-width: 800px;
   }
 }
+/* hero */
 .hero {
   display: flex;
   align-items: center;
@@ -103,18 +132,14 @@
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  main:not() {
-    max-width: 70%;
-    margin: 0 auto;
-  }
-}
+
 
 /* guide - paper tile */
 
 .guided-tour {
   display: flex;
   background-color: var(--tangerine);
+  margin-bottom: 20%;
 }
 
 .guided-tour img {
@@ -128,57 +153,38 @@
   min-width: 20ch;
 }
 
-/* Upcoming events */
-.event-item {
+
+/* events */
+.upcoming-events > div {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 5%;
+}
+
+.exhibition_events {
+  max-width: 400px;
+  margin-bottom: 5%;
+}
+
+/* contact */
+.contactus div {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  max-width: 450px;
-  margin: 0 auto;
+  justify-items: stretch;
+  grid-template-columns: 40px 1fr;
+  grid-template-rows: 1fr;
+  gap: 1em;
+  margin-bottom: 1em;
 }
 
-.event-item__text {
-  min-width: 100px;
-  grid-column: 1 / 2;
-  grid-row: 1 / -1;
+.contactus div p {
+  margin: 0;
 }
 
-.event-item__text p {
-  margin: 0 0 0.5em 0;
-}
-
-.event-item__img {
-  grid-column: 2 / -1;
-  grid-row: 1 / -1;
-  z-index: -1;
-}
-
-.event-item img {
-  object-fit: cover;
-  width: 100%;
-}
-
-.event-item__date::before {
-  content: url(/assets/icons/icon__calendar.svg);
-  margin-right: 13px;
+.contactus div img {
+  align-self: center;
 }
 
 .static__google-map {
   width: 100%;
-}
-
-.phone-number__csm::before {
-  content: url(/assets/icons/icon__phone.svg);
-}
-
-.email__csm::before {
-  content: url(/assets/icons/icon__mail.svg);
-}
-
-.phone-number__csm::before, .email__csm::before {
-  width: 100%;
-  margin-right: 1.2em;
-}
-
-main section {
-  margin-bottom: 20%;
 }

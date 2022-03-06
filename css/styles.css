@@ -50,10 +50,38 @@ a {
     text-decoration: none;
 }
 
-
+@media only screen and (min-width: 1024px) {
+    .content-wrapper__homepage {
+        max-width: 70%;
+        margin: 0 auto !important;
+      }
+}
 
 /* NAVBAR */
+    .navbar {
+        display: flex;
+        height: 70px;
+        width: calc(100% - 10%);
+        background-color: var(--intelligent_blue);
+        padding: 0.7em 5%;
+    }
 
+    .logo, .menu__icon img, .searchbar__icon  {
+        height: 100%;
+    }
+
+    .logo-wrapper {
+        flex: 1;
+    }
+
+    .menu {
+        align-self: center;
+        margin-left: 7%;
+    }
+
+    .logo-wrapper, .searchbar, menu {
+        z-index: 100;
+    }
     /* menu checkbox hack */
         #hamburger-menu, nav, #exhibitions-nav, .exhibitions__list {
             display: none;
@@ -66,10 +94,6 @@ a {
         nav label::after {
             content: "+";
             margin-left: 20px;
-        }
-
-        #exhibitions-nav:checked ~ label::after {
-            content: "-"
         }
 
         nav {
@@ -88,6 +112,7 @@ a {
             font-size: var(--font-size-h3);
             font-weight: bold;
             margin-left: 10%;
+            margin-bottom: 10px;
         }
         
         .exhibitions__list li {
@@ -97,34 +122,104 @@ a {
 
         .exhibitions__list li img {
             height: clamp(20px, 1.143vw + 0.964rem, 35px);
+            width: clamp(25px, 1.143vw + 0.964rem, 35px);
+            margin: auto 0;
+        }
+        
+    /* search */
+        .searchbar-wrapper{
+            align-self: center;
+            height: 60%;
+            min-width: 50px;
         }
 
-    .navbar {
-        display: flex;
-        height: 70px;
-        width: calc(100% - 10%);
-        background-color: var(--intelligent_blue);
-        padding: 0.7em 5%;
-    }
+        .searchbar {
+            height: 100%;
+        }
 
-    .logo, .menu__icon img, .searchbar__icon  {
+        .search-btn {
+            height: inherit;
+            top: 0;
+            right: 0;
+            padding-right: 5px;
+            display: flex;
+        }
+
+        .fa-search{
+            font-size: 1.8em;
+            align-self: center;
+        }
+
+        .search-input {
+            display: none;
+            height: inherit;
+            border: none;
+            padding: 15px;
+            min-width: 30px;
+            transition: 0.5s ease-out;
+        }
+
+        .searchbar-wrapper:hover .search-input {
+            display: block;
+            min-width: 30ch;
+        }
+
+        .search-input::-webkit-search-cancel-button{
+            position:relative;
+            right:20px;  
+        }
+
+@media only screen and (max-width: 1023px) {
+    .searchbar-wrapper:hover .search-input {
+        position: absolute;
+        top: 92px;
+        height: 60px;
+        width: 100%;
+        left: 0;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .searchbar{
+        position: relative;
         height: 100%;
     }
+    .search-btn{
+        position: absolute;
+    }
+    .search-input {
+        border-radius: 4px;
+    }
+}
 
-    .logo-wrapper {
-        flex: 1;
+
+
+/* goes over multiple pages */
+    /* upcoming events */
+    .exhibition_events {
+        width: calc(15rem + 14vw);
     }
 
-
-    .searchbar, .menu {
-        height: 40%;
-        align-self: center;
-        margin-left: 7%;
+    .exhibition_events img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .logo-wrapper, .searchbar, menu {
-        z-index: 100;
+    .exhibition_events__img {
+        height: calc(5rem + 5vw);
     }
 
+    .exhibition_events p {
+        margin: 0;
+    }
 
+    .exhibition_events p:last-child {
+        margin-top: 1em;
+    }
 
+    .event__date::before {
+        content: url(/assets/icons/icon__calendar.svg);
+        margin-right: 13px;
+      }
