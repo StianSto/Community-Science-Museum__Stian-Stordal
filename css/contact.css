@@ -1,0 +1,73 @@
+h1 {
+    color: var(--cherry_red);
+}
+label {
+    font-size: var(--font-size-h3);
+    font-family: montserrat, sans-serif;
+    color: black;
+    display:block
+}
+
+.toggle_btn, .toggle_btn ~ p {
+    display: none;
+}
+
+.toggle_btn:checked ~ p {
+    display: block;
+    margin-left: 1em;
+}
+
+
+.faq-box {
+    border: 1.5px solid #707070;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 1em;
+}
+
+
+/* contact */
+
+    .content-wrapper__contactus {
+        display: flex;
+        flex-flow: column nowrap;
+        max-width: 630px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .content-wrapper__contactus > * {
+        margin-right: auto;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .content-wrapper__contactus {
+            flex-flow: row wrap;
+        }
+    }
+
+    .contactus {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .contactus div:nth-child(1), .contactus div:nth-child(2) {
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: 40px auto;
+        grid-template-rows: 1fr;
+        gap: 1em;
+        margin-left: 1em;
+    }
+    
+    .contactus div img {
+        align-self: center;
+    }
+
+    .contact__availability {
+        margin-left: calc(40px + 2em);
+        margin-block: auto;
+    }
+
+    .contact__availability p {
+        width: max-content;
+        margin: 0.3em;
+    }

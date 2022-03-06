@@ -1,0 +1,25 @@
+h1 {
+    color: var(--cherry_red);
+}
+
+h2 {
+    position: relative;
+    width: max-content;
+    white-space: normal;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 1px;
+    background: #707070;
+    top: calc(20px + var(--font-size-h2));
+    left: 0;
+}
+
+.date__events__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+}
