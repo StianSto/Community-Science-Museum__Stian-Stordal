@@ -171,18 +171,20 @@ main section {
 .contactus div {
   display: grid;
   justify-items: stretch;
-  grid-template-columns: 40px 1fr;
+  grid-template-columns: 35px 1fr;
   grid-template-rows: 1fr;
   gap: 1em;
   margin-bottom: 1em;
 }
 
 .contactus div p {
-  margin: 0;
+  margin: auto 0;
 }
 
 .contactus div img {
   align-self: center;
+  height: 100%;
+  width: 100%;
 }
 
 .static__google-map {

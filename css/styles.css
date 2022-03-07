@@ -1,228 +1,265 @@
 :root {
-    
-    /* Color Palette */
-    --beige: #fff1df;
-    --charcoal: #272727;
-    --tangerine: #ff6900;
-    --cherry_red: #e3006a;
-    --chem_green: #39db00;
-    --forest_green: #458718;
-    --intelligent_blue: #05aff2;
-    --cobalt_blue: #0047ab;
+  /* Color Palette */
+  --beige: #fff1df;
+  --charcoal: #272727;
+  --tangerine: #ff6900;
+  --cherry_red: #e3006a;
+  --chem_green: #39db00;
+  --forest_green: #458718;
+  --intelligent_blue: #05aff2;
+  --cobalt_blue: #0047ab;
 
-    /* font styles */
-    --font-size-h1: clamp(2.125rem, 5.8vw + 0.856rem, 5rem);
-    --font-size-h2: clamp(1.875rem, 1.6vw + 1.475rem, 2.75rem);
-    --font-size-h3: clamp(1rem, 1.143vw + 0.964rem, 3rem);
-    --font-size-copy: clamp(1.125rem, 0.686vw + 0.954rem, 1.5rem);
+  /* font styles */
+  --font-size-h1: clamp(2.125rem, 5.8vw + 0.856rem, 5rem);
+  --font-size-h2: clamp(1.875rem, 1.6vw + 1.475rem, 2.75rem);
+  --font-size-h3: clamp(1rem, 1.143vw + 0.964rem, 3rem);
+  --font-size-copy: clamp(1.125rem, 0.686vw + 0.954rem, 1.5rem);
 
-    --page-margin-centering: 15%
+  --page-margin-centering: 15%;
 }
 
 h1 {
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-size: var(--font-size-h1);
-    color: white;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-h1);
+  color: white;
 }
 
-h2, h3 {
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+h2,
+h3 {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
 h2 {
-    font-size: var(--font-size-h2);
+  font-size: var(--font-size-h2);
 }
 
 h3 {
-    font-size: var(--font-size-h3);
-    color: white;
+  font-size: var(--font-size-h3);
+  color: white;
 }
 
 p {
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: var(--font-size-copy);
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-copy);
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 1024px) {
-    .content-wrapper__center {
-        max-width: 70%;
-        margin: 0 auto !important;
-      }
+  .content-wrapper__center {
+    max-width: 70%;
+    margin: 0 auto !important;
+  }
 }
 
 /* NAVBAR */
-    .navbar {
-        display: flex;
-        height: 70px;
-        width: calc(100% - 10%);
-        background-color: var(--intelligent_blue);
-        padding: 0.7em 5%;
-    }
+.navbar {
+  display: flex;
+  height: 70px;
+  width: calc(100% - 10%);
+  background-color: var(--intelligent_blue);
+  padding: 0.7em 5%;
+  z-index: 100;
+}
 
-    .logo, .menu__icon img, .searchbar__icon  {
-        height: 100%;
-    }
+.logo,
+.menu__icon img,
+.searchbar__icon {
+  height: 100%;
+}
 
-    .logo-wrapper {
-        flex: 1;
-    }
+.logo-wrapper {
+  flex: 1;
+}
 
-    .menu {
-        align-self: center;
-        margin-left: 7%;
-    }
+.menu {
+  align-self: center;
+  margin-left: 7%;
+}
 
-    .logo-wrapper, .searchbar, menu {
-        z-index: 100;
-    }
-    /* menu checkbox hack */
-        #hamburger-menu, nav, #exhibitions-nav, .exhibitions__list {
-            display: none;
-        }
+.logo-wrapper,
+.searchbar,
+menu {
+  z-index: 100;
+}
+/* menu checkbox hack */
+#hamburger-menu,
+nav,
+#exhibitions-nav,
+.exhibitions__list {
+  display: none;
+}
 
-        #hamburger-menu:checked ~ nav, #exhibitions-nav:checked ~ .exhibitions__list {
-            display: block;
-        }   
-        
-        nav label::after {
-            content: "+";
-            margin-left: 20px;
-        }
+#hamburger-menu:checked ~ nav,
+#exhibitions-nav:checked ~ .exhibitions__list {
+  display: block;
+}
 
-        nav {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            margin-top: 25px;
-            background-color: var(--intelligent_blue);
-            z-index: 99;
-        }
+nav label::after {
+  content: "+";
+  margin-left: 10px;
+}
 
-        nav li {
-            list-style-type: none;
-            color: white;
-            font-family: montserrat Arial, Helvetica, sans-serif;
-            font-size: var(--font-size-h3);
-            font-weight: bold;
-            margin-left: 10%;
-            margin-bottom: 10px;
-        }
-        
-        .exhibitions__list li {
-            display: flex;
-            gap: 15px;
-        }
+nav {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin-top: 25px;
+  background-color: var(--intelligent_blue);
+  z-index: 1;
+  animation: navbar 0.4s forwards;
+  transform-origin: top;
+}
 
-        .exhibitions__list li img {
-            height: clamp(20px, 1.143vw + 0.964rem, 35px);
-            width: clamp(25px, 1.143vw + 0.964rem, 35px);
-            margin: auto 0;
-        }
-        
-    /* search */
-        .searchbar-wrapper{
-            align-self: center;
-            height: 60%;
-            min-width: 50px;
-        }
+nav li,
+nav a {
+  list-style-type: none;
+  color: white;
+  font-family: montserrat Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-h3);
+  font-weight: bold;
+}
 
-        .searchbar {
-            height: 100%;
-        }
+nav li {
+  margin-left: 10%;
+}
 
-        .search-btn {
-            height: inherit;
-            top: 0;
-            right: 0;
-            padding-right: 5px;
-            display: flex;
-        }
+nav ul > li {
+  margin-bottom: 10px;
+}
 
-        .fa-search{
-            font-size: 1.8em;
-            align-self: center;
-        }
+.exhibitions__list li {
+  display: flex;
+  gap: 15px;
+}
 
-        .search-input {
-            display: none;
-            height: inherit;
-            border: none;
-            padding: 15px;
-            min-width: 30px;
-            transition: 0.5s ease-out;
-        }
+.exhibitions__list li img {
+  height: clamp(20px, 1.143vw + 0.964rem, 35px);
+  width: clamp(25px, 1.143vw + 0.964rem, 35px);
+  margin: auto 0;
+}
 
-        .searchbar-wrapper:hover .search-input {
-            display: block;
-            min-width: 30ch;
-        }
+.nav-li__home,
+.nav-li__events {
+  margin-bottom: 1.4em;
+}
 
-        .search-input::-webkit-search-cancel-button{
-            position:relative;
-            right:20px;  
-        }
+/* search */
+.searchbar-wrapper {
+  align-self: center;
+  height: 60%;
+  min-width: 50px;
+}
+
+.searchbar {
+  height: 100%;
+}
+
+.search-btn {
+  height: inherit;
+  top: 0;
+  right: 0;
+  padding-right: 5px;
+  display: flex;
+}
+
+.fa-search {
+  font-size: 1.8em;
+  align-self: center;
+}
+
+.search-input {
+  display: none;
+  height: inherit;
+  border: none;
+  padding: 15px;
+  min-width: 30px;
+  z-index: 100;
+}
+
+.searchbar-wrapper:hover .search-input {
+  display: block;
+  min-width: 30ch;
+  animation: searchbar 0.3s forwards;
+  transform-origin: 100% 50%;
+}
+
+.search-input::-webkit-search-cancel-button {
+  position: relative;
+  right: 20px;
+}
 
 @media only screen and (max-width: 1023px) {
-    .searchbar-wrapper:hover .search-input {
-        position: absolute;
-        top: 92px;
-        height: 60px;
-        width: 100%;
-        left: 0;
-        margin-right: 0;
-    }
+  .searchbar-wrapper:hover .search-input {
+    position: absolute;
+    top: 92px;
+    height: 60px;
+    width: 100%;
+    left: 0;
+    margin-right: 0;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-    .searchbar{
-        position: relative;
-        height: 100%;
-    }
-    .search-btn{
-        position: absolute;
-    }
-    .search-input {
-        border-radius: 4px;
-    }
+  .searchbar {
+    position: relative;
+    height: 100%;
+  }
+  .search-btn {
+    position: absolute;
+  }
+  .search-input {
+    border-radius: 4px;
+  }
 }
 
+@keyframes searchbar {
+    0% {transform: scale(0, 1);}
+    100% {transform: scale(1, 1);}
+}
 
+@keyframes navbar {
+    0% {transform: translatex(100%); }
+    100% {transform: translatex(0) ;}
+}
+/* @keyframes navbar {  
+    0% {transform: scaleY(0);}
+    100% {transform: scaleY(1);}
+}
+*/ /* this is a second option for navbar animation */
 
 /* goes over multiple pages */
-    /* upcoming events */
-    .exhibition_events {
-        width: calc(15rem + 14vw);
-    }
+/* upcoming events */
+.exhibition_events {
+  width: calc(15rem + 14vw);
+}
 
-    .exhibition_events img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+.exhibition_events img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .exhibition_events__img {
-        height: calc(5rem + 5vw);
-    }
+.exhibition_events__img {
+  height: calc(5rem + 5vw);
+}
 
-    .exhibition_events p {
-        margin: 0;
-    }
+.exhibition_events p {
+  margin: 0;
+}
 
-    .exhibition_events p:last-child {
-        margin-top: 1em;
-    }
+.exhibition_events p:last-child {
+  margin-top: 1em;
+}
 
-    .event__date::before {
-        content: url(/assets/icons/icon__calendar.svg);
-        margin-right: 13px;
-      }
-
-      
+.event__date::before {
+  content: url(/assets/icons/icon__calendar.svg);
+  margin-right: 13px;
+}

@@ -1,52 +1,54 @@
-
 .topbanner_exhibition {
-    display: flex;
-    align-items: center;
-    max-height: 50%;
-    width: 90%;
-    background-image: url(../assets/images/img_cosmology_tile.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: 50%;
-    padding: 5%;
+  display: flex;
+  align-items: center;
+  max-height: 50%;
+  width: 80%;
+  background-image: url(../assets/images/img_cosmology_tile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  padding: 7% 10%;
 }
 
 .topbanner_exhibition img {
-    height: 100%;
-    width: 100%;
-    min-width: 50px;
+  height: 100%;
+  width: 100%;
+  min-width: 50px;
 }
 
 .img-container_banner {
-    align-self: stretch;
-    height: 100%;
-    width: 20%;
-    margin: auto 0;
+  align-self: stretch;
+  height: 100%;
+  width: 20%;
+  margin: auto 0;
 }
 
 h1 {
-    margin: 1%;
+  margin: 1%;
 }
 
-
 /* profile */
-    .profile img {
-        width: 10em;
-        height: 10em;
-        object-fit: cover;
-        border-radius: 50%;
-        
-    }
-    .pr_tobi-wan img {
-        object-position: 50% 10%;
-    }
+.staff__section {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: calc(5vw + 120px);
+}
 
-    .pr_lucy img{
-        object-position: 35% 100%;
-    }
+.profile img {
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.pr_tobi-wan img {
+  object-position: 50% 10%;
+}
 
-    .profile p:nth-child(2), .profile p:nth-child(3) {
-        margin: 0;
-    }
+.pr_lucy img {
+  object-position: 35% 100%;
+}
 
-
+.profile p:nth-child(2),
+.profile p:nth-child(3) {
+  margin: 0;
+}
