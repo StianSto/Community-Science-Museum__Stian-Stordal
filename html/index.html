@@ -24,7 +24,7 @@
         <div class="searchbar-wrapper">
             <form class="searchbar">
                 <input class="search-input" type="search">
-                <div class="search-btn"> <!--this would have been a button element, but i got som major issues with checkboxhack and i couldn't make i unclickable-->
+                <div class="search-btn">
                     <i class="fa fa-search"></i>
                 </div>
             </form>
@@ -35,7 +35,7 @@
             <input type="checkbox" id="hamburger-menu">
             <nav>
                 <ul>
-                    <li class="nav-li__home"><a href="index.html">Home</a></li>
+                    <li class="active-li"><a href="index.html">Home</a></li>
                     <li>
                         <label for="exhibitions-nav">Exhibitions</label>
                         <input type="checkbox" id="exhibitions-nav">
@@ -48,7 +48,7 @@
                             <li class="li__physics"><a href=""><img src="../assets/icons/icon__physics.svg" alt="icon of an atom">Physics</a></li>
                         </ul>
                     </li>
-                    <li class="nav-li__events"><a href="events.html">Events</a></li>
+                    <li><a href="events.html">Events</a></li>
                     <li><a href="aboutus.html">About CSM</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -106,15 +106,15 @@
                     </a>
                 </div>
             </section>
-            <div class="guided-tour">
-                <div class="guided-tour__img">
-                    <img src="../assets/images/img_aboutus_museum.jpg" alt="">
-                </div>
-                <div>
-                    <p>Do you want to arrange a guided tour for school class, or a group?</p>
-                    <a href="">Click here to get in touch with us</a>
-                </div>
-            </div>
+                <a href="contact.html" class="guided-tour">
+                    <div class="guided-tour__img">
+                        <img src="../assets/images/img_aboutus_museum.jpg" alt="">
+                    </div>
+                    <div>
+                        <p>Do you want to arrange a guided tour for school class, or a group?</p>
+                        <p>Click here to get in touch with us</p>
+                    </div>
+                </a>
             <div class="content-wrapper_bodycontent">
                 <section class="content-wrapper_mapandinfo">
                     <div>
