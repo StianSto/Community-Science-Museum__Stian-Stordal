@@ -1,6 +1,8 @@
 /* general */
-.content-wrapper__homepage {
-  margin: 0 10px;
+
+.content-wrapper__center {
+  max-width: 66%;
+  margin: 0 auto !important; 
 }
 
 .upcoming-events > *:not(h2),

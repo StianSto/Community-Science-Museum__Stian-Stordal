@@ -47,6 +47,39 @@ body {
   margin: 0;
 }
 
+footer {
+  background-color: var(--tangerine);
+  padding: 3em 2em 1em;
+}
+
+.footer__content {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  width: fit-content;
+  gap: 3em;
+}
+
+.footer__content p:nth-child(2),
+.footer__content p:nth-child(3) {
+  margin-left: 1em;
+}
+
+.footer__socialmedia {
+  text-align: center;
+  color: white;
+}
+
+.footer__socialmedia img {
+  margin: 0 clamp(5px, 1vw + 0.2rem, 20px);
+  height: 100%;
+}
+
+.footer__socialmedia div {
+  width: 100%;
+  height: clamp(40px, 3vw + 1rem, 100px);
+}
+
 .content-wrapper__center > * {
   margin-top: 12rem;
 }
@@ -59,220 +92,232 @@ a {
 
 @media only screen and (min-width: 1024px) {
   .content-wrapper__center {
-    max-width: 70%;
-    margin: 0 auto !important; 
+    max-width: 50%;
+    margin: 0 auto !important;
   }
 }
 
 /* NAVBAR */
-  .navbar {
-    display: flex;
-    height: 70px;
-    width: calc(100% - 10%);
-    background-color: var(--intelligent_blue);
-    padding: 0.7em 5%;
-    z-index: 100;
-  }
+.navbar {
+  display: flex;
+  height: 70px;
+  width: calc(100% - 10%);
+  background-color: var(--intelligent_blue);
+  padding: 0.7em 5%;
+  z-index: 100;
+}
 
-  .logo,
-  .menu__icon img,
-  .searchbar__icon {
+.logo,
+.menu__icon img,
+.searchbar__icon {
+  height: 100%;
+}
+
+.logo-wrapper {
+  flex: 1;
+}
+
+.menu {
+  align-self: center;
+  margin-left: 7%;
+}
+
+.logo-wrapper,
+.searchbar,
+menu {
+  z-index: 100;
+}
+/* menu checkbox hack */
+#hamburger-menu,
+nav,
+#exhibitions-nav,
+.exhibitions__list {
+  display: none;
+}
+
+#hamburger-menu:checked ~ nav,
+#exhibitions-nav:checked ~ .exhibitions__list {
+  display: block;
+}
+
+nav label::after {
+  content: "+";
+  margin-left: 10px;
+}
+
+nav {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin-top: 25px;
+  background-color: var(--intelligent_blue);
+  z-index: 1;
+  animation: navbar 0.4s alternate;
+  transition: all 0.4s ease-in;
+  transform-origin: top;
+}
+
+nav li,
+nav a {
+  list-style-type: none;
+  color: white;
+  font-family: montserrat Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-h3);
+  font-weight: bold;
+}
+
+nav li {
+  margin-left: 10%;
+}
+
+nav ul > li {
+  margin-bottom: 10px;
+}
+
+.exhibitions__list li a {
+  display: flex;
+  gap: 15px;
+}
+
+.exhibitions__list li img {
+  height: clamp(20px, 1.143vw + 0.964rem, 35px);
+  width: clamp(25px, 1.143vw + 0.964rem, 35px);
+  margin: auto 0;
+}
+
+nav > ul > li:first-child,
+nav > ul > li:nth-child(3),
+nav > ul > li:last-child {
+  margin-bottom: 1.4em;
+}
+
+.active-li {
+  text-decoration: underline;
+  position: relative;
+  pointer-events: none;
+}
+
+/* search */
+.searchbar-wrapper {
+  align-self: center;
+  height: 60%;
+  min-width: 50px;
+}
+
+.searchbar {
+  height: 100%;
+}
+
+.search-btn {
+  height: inherit;
+  top: 0;
+  right: 0;
+  padding-right: 5px;
+  display: flex;
+}
+
+.fa-search {
+  font-size: 1.8em;
+  align-self: center;
+}
+
+.search-input {
+  display: none;
+  height: inherit;
+  border: var(--intelligent_blue) solid 2px;
+  padding: 15px;
+  width: 100%;
+  z-index: 100;
+  font-size: 1.2em;
+}
+
+.searchbar-wrapper:hover .search-input {
+  display: block;
+  min-width: 30ch;
+  animation: searchbar 0.3s forwards;
+  transform-origin: 100% 50%;
+}
+
+.search-input::-webkit-search-cancel-button {
+  position: relative;
+  right: 20px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .searchbar-wrapper:hover .search-input {
+    position: absolute;
+    top: 92px;
+    height: 60px;
+    width: 100%;
+    left: 0;
+    margin-right: 0;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .searchbar {
+    position: relative;
     height: 100%;
   }
-
-  .logo-wrapper {
+  .search-btn {
+    position: absolute;
+  }
+  .search-input {
+    border-radius: 4px;
+  }
+  .searchbar-wrapper {
     flex: 1;
   }
+}
 
-  .menu {
-    align-self: center;
-    margin-left: 7%;
+@keyframes searchbar {
+  0% {
+    transform: scale(0, 1);
   }
-
-  .logo-wrapper,
-  .searchbar,
-  menu {
-    z-index: 100;
+  100% {
+    transform: scale(1, 1);
   }
-    /* menu checkbox hack */
-      #hamburger-menu,
-      nav,
-      #exhibitions-nav,
-      .exhibitions__list {
-        display: none;
-      }
+}
 
-      #hamburger-menu:checked ~ nav,
-      #exhibitions-nav:checked ~ .exhibitions__list {
-        display: block;
-      }
-
-      nav label::after {
-        content: "+";
-        margin-left: 10px;
-      }
-
-      nav {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        margin-top: 25px;
-        background-color: var(--intelligent_blue);
-        z-index: 1;
-        animation: navbar 0.4s alternate;
-        transition: all 0.4s ease-in;
-        transform-origin: top;
-      }
-
-      nav li,
-      nav a {
-        list-style-type: none;
-        color: white;
-        font-family: montserrat Arial, Helvetica, sans-serif;
-        font-size: var(--font-size-h3);
-        font-weight: bold;
-      }
-
-      nav li {
-        margin-left: 10%;
-      }
-
-      nav ul > li {
-        margin-bottom: 10px;
-      }
-
-      .exhibitions__list li a {
-        display: flex;
-        gap: 15px;
-      }
-
-      .exhibitions__list li img {
-        height: clamp(20px, 1.143vw + 0.964rem, 35px);
-        width: clamp(25px, 1.143vw + 0.964rem, 35px);
-        margin: auto 0;
-      }
-
-      nav > ul > li:first-child,
-      nav > ul > li:nth-child(3),
-      nav > ul > li:last-child {
-        margin-bottom: 1.4em;
-      }
-
-      .active-li {
-        text-decoration: underline;
-        position: relative;
-        pointer-events: none;
-      }
-
-    /* search */
-      .searchbar-wrapper {
-        align-self: center;
-        height: 60%;
-        min-width: 50px;
-      }
-
-      .searchbar {
-        height: 100%;
-      }
-
-      .search-btn {
-        height: inherit;
-        top: 0;
-        right: 0;
-        padding-right: 5px;
-        display: flex;
-      }
-
-      .fa-search {
-        font-size: 1.8em;
-        align-self: center;
-      }
-
-      .search-input {
-        display: none;
-        height: inherit;
-        border: var(--intelligent_blue) solid 2px;
-        padding: 15px;
-        width: 100%;
-        z-index: 100;
-        font-size: 1.2em;
-      }
-
-      .searchbar-wrapper:hover .search-input {
-        display: block;
-        min-width: 30ch;
-        animation: searchbar 0.3s forwards;
-        transform-origin: 100% 50%;
-      }
-
-      .search-input::-webkit-search-cancel-button {
-        position: relative;
-        right: 20px;
-      }
-
-      @media only screen and (max-width: 1023px) {
-        .searchbar-wrapper:hover .search-input {
-          position: absolute;
-          top: 92px;
-          height: 60px;
-          width: 100%;
-          left: 0;
-          margin-right: 0;
-          box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-      }
-
-      @media only screen and (min-width: 1024px) {
-        .searchbar {
-          position: relative;
-          height: 100%;
-        }
-        .search-btn {
-          position: absolute;
-        }
-        .search-input {
-          border-radius: 4px;
-        }
-        .searchbar-wrapper {
-          flex: 1;
-        }
-      }
-
-      @keyframes searchbar {
-        0% {transform: scale(0, 1);}
-        100% {transform: scale(1, 1);}
-      }
-
-      @keyframes navbar {
-        0% {transform: scaleY(0);}
-        100% {transform: scaleY(1);}
-      }
+@keyframes navbar {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 
 /* goes over multiple pages */
-  /* upcoming events */
-    .exhibition_events {
-      width: calc(15rem + 14vw);
-    }
+/* upcoming events */
+.exhibition_events {
+  width: calc(15rem + 14vw);
+}
 
-    .exhibition_events img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.exhibition_events img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .exhibition_events__img {
-      height: calc(5rem + 5vw);
-    }
+.exhibition_events__img {
+  height: calc(5rem + 5vw);
+}
 
-    .exhibition_events p {
-      margin: 0;
-    }
+.exhibition_events p {
+  margin: 0;
+}
 
-    .exhibition_events p:last-child {
-      margin-top: 1em;
-    }
+.exhibition_events p:last-child {
+  margin-top: 1em;
+}
 
-    .event__date::before {
-      content: url(/assets/icons/icon__calendar.svg);
-      margin-right: 13px;
-    }
+.event__date::before {
+  content: url(/assets/icons/icon__calendar.svg);
+  margin-right: 13px;
+}
+
+.upcoming-events a {
+  text-decoration: underline;
+}

@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Events | Community Science Museum</title>
+        <title>Virtual Reality | Community Science Museum</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -14,7 +14,8 @@
         <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
         <link rel="stylesheet" href="../css/styles.css">
-        <link rel="stylesheet" href="../css/events.css">
+        <link rel="stylesheet" href="../css/exhibition.css">
+        <link rel="stylesheet" href="../css/exhibition-pages/exhibition-vr.css">
     </head>
 <body>
     <header class="navbar">
@@ -44,53 +45,66 @@
                             <li class="li__ecology"><a href="../html/exhibition-ecology.html"><img src="../assets/icons/icon__ecology.svg" alt="icon of a leaf">Ecology</a></li>
                             <li class="li__microbiology"><a href="../html/exhibition-microbiology.html"><img src="../assets/icons/icon_microbiology.svg" alt="icon of a bacteria">Microbiology</a></li>
                             <li class="li__paleontology"><a href="../html/exhibition-paleontology.html"><img src="../assets/icons/icon__bone.svg" alt="icon of a bone">Paleontology</a></li>
-                            <li class="li__vr"><a href="../html/exhibition-vr.html"><img src="../assets/icons/icon__vr.svg" alt="icon of vr-goggles">VR</a></li>
+                            <li class="li__vr active-li"><a href="../html/exhibition-vr.html"><img src="../assets/icons/icon__vr.svg" alt="icon of vr-goggles">VR</a></li>
                             <li class="li__physics"><a href="../html/exhibition-physics.html"><img src="../assets/icons/icon__physics.svg" alt="icon of an atom">Physics</a></li>
                         </ul>
                     </li>
-                    <li class="active-li"><a href="events.html">Events</a></li>
+                    <li><a href="events.html">Events</a></li>
                     <li><a href="aboutus.html">About CSM</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main class="content-wrapper__center">
-        <h1>Events</h1>
-        <section>
-            <h2>Thursday, July 14th</h2>
-            <div class="date__events__list">
-                <div class="exhibition_events">
+    <main>
+        <div>
+            <section class="topbanner_exhibition">
+                <div class="img-container_banner">
+                    <img src="../assets/icons/icon__vr.svg" alt="icon of vr-goggles">
+                </div>
+                <h1>Virtual Reality</h1>
+            </section>
+        </div>
+        <div class="content-wrapper__center">
+            <section>
+                <p>Explore the wonders of our cosmos. Our fantastic exhibition, ‘The Sky Above Us’, explores the night sky and what we can see and know about the universe around us. You'll locate the various constellations and galaxies that can be seen and learn a bit about the early navigators who used the stars to travel by.</p>
+                <p>Follow the journey of our solar exploration: from early Arab traders, to Galileo’s telescope, to the latest exploration of the planets in our solar system.</p>
+            </section>
+            <section class="exhibition_events">
+                <h2>Upcoming Events</h2>
+                <div>
                     <div class="exhibition_events__img">
-                        <img src="../assets/images/img_chameleon_event.jpg" alt="image of a chameleon on a tree branch in the jungle">
+                        <img src="../assets/images/img_neptune_event.jpg" alt="">
                     </div>
                     <p><b>Cosmology: Neptune</b></p>
                     <p>Learn about the blue gas giant that is part of our solar system</p>
-                    <p class="event__date">6 pm, room 325</p>
+                    <p>6 pm, room 325</p>
                 </div>
-                <div class="exhibition_events">
-                    <div class="exhibition_events__img">
-                        <img src="../assets/images/img_neptune_event.jpg" alt="image of the blue planet known as Neptune">
+            </section>
+            <section>
+                <h2>Our staff in Virtual Reality</h2>
+                <div class="staff__section">
+                    <div class="profile pr_tobi-wan">
+                        <img src="../assets/images/img_profilepic_tobiwanshenobi.jpg" alt="image of a happy man with dark hair and tan skin">
+                        <p><b>Tobi-Wan Shenobi</b></p>
+                        <p>Head of Virtual Reality</p>
+                        <p>tobiwanshenobi@csm.com</p>
                     </div>
-                    <p><b>Cosmology: Neptune</b></p>
-                    <p>Learn about the blue gas giant that is part of our solar system</p>
-                    <p class="event__date">6 pm, room 325</p>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h2>Thursday, July 21st</h2>
-            <div class="date__events__list">
-                <div class="exhibition_events">
-                    <div class="exhibition_events__img">
-                        <img src="../assets/images/img_covid19_event.jpg" alt="image of a virus">
+                    <div class="profile pr_lucy">
+                        <img src="../assets/images/img_profilepic_lucyskywalker.jpg" alt="image of a happy blonde middle-aged woman.">
+                        <p><b>Lucy Skywalker</b></p>
+                        <p>Junior researcher, Virtual Reality</p>
+                        <p>lucyskywalker@csm.com</p>
                     </div>
-                    <p><b>Cosmology: Neptune</b></p>
-                    <p>Learn about the blue gas giant that is part of our solar system</p>
-                    <p class="event__date">6 pm, room 325</p>
+                    <div class="profile pr_anna">
+                        <img src="../assets/images/img_profilepic_annakiln.jpg" alt="image of young redheaded girl with a lake in the background">
+                        <p><b>Anna Kiln</b></p>
+                        <p>Apprentice researcher, Guide</p>
+                        <p>annakiln@csm.com</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 </body>
 </html>

@@ -1,7 +1,8 @@
 h1 {
-    color: var(--cherry_red);
+    color: var(--cherry_red); /*goes over multiple pages. move?*/
 }
-label {
+
+.content-wrapper__faq label {
     font-size: var(--font-size-h3);
     font-family: montserrat, sans-serif;
     color: black;
@@ -17,7 +18,6 @@ label {
     margin-left: 1em;
 }
 
-
 .faq-box {
     border: 1.5px solid #707070;
     border-radius: 5px;
@@ -25,9 +25,7 @@ label {
     padding: 1em;
 }
 
-
 /* contact */
-
     .content-wrapper__contactus {
         display: flex;
         flex-flow: column nowrap;
