@@ -1,4 +1,4 @@
-.aboutus_endsection,
+.aboutus__endsection,
 .aboutus__intro,
 h1 {
   margin-inline: 10px;
@@ -8,16 +8,13 @@ h1 {
   color: var(--cherry_red);
 }
 
-main img {
-  width: 100%;
-}
-
-.aboutus__intro {
+.aboutus__intro, .aboutus__endsection div{
   display: flex;
   flex-flow: row wrap;
+  gap: 5%;
 }
 
-.aboutus__intro p {
+.aboutus__intro p, .aboutus__endsection div p {
   min-width: 25ch;
   flex: 5;
   align-items: stretch;
@@ -25,15 +22,13 @@ main img {
   height: inherit;
 }
 
-.aboutus__intro div {
+.aboutus__intro div, .aboutus__endsection div div {
   flex: 2;
   min-width: 200px;
   height: inherit;
 }
 
 .aboutus__intro img {
-  height: 100%;
-  object-fit: cover;
   object-position: 70%;
 }
 
@@ -42,12 +37,10 @@ main img {
   color: white;
   padding: 10% 10px;
   margin: 10% 0;
-  height: 100%;
 }
 
 .aboutus__middlesection img {
   height: calc(4rem + 20vw);
-  object-fit: cover;
   width: calc(100% + 20px);
   position: relative;
   left: -10px;
@@ -55,7 +48,7 @@ main img {
 
 /* centering desktop */
 @media only screen and (min-width: 1024px) {
-  .aboutus_endsection,
+  .aboutus__endsection,
   .aboutus__intro,
   h1 {
     margin-inline: var(--page-margin-centering);

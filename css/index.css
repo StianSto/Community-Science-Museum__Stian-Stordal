@@ -1,37 +1,17 @@
 /* general */
-
-.content-wrapper__center {
-  max-width: 66%;
-  margin: 0 auto !important; 
-}
-
 .upcoming-events > *:not(h2),
 .contactus > *:not(h2),
 .openinghours > *:not(h2) {
   margin-left: 5%;
 }
 
-.content-wrapper_bodycontent {
+.content-wrapper_bodycontent,
+.content-wrapper_info{
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: 10%;
 }
 
-.content-wrapper_mapandinfo {
-  width: 100%;
-}
-
-.content-wrapper_info {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 8%;
-}
-
-@media only screen and (min-width: 1024px) {
-  .content-wrapper_info {
-    min-width: 800px;
-  }
-}
 /* hero */
 .hero {
   display: flex;
@@ -40,8 +20,6 @@
 }
 
 .hero__img {
-  width: 100%;
-  object-fit: cover;
   max-height: 70vh;
   min-height: 250px;
 }
@@ -67,7 +45,6 @@
 }
 
 /* Exhibition tiles */
-
 .exhibition-tiles h2 {
   text-align: center;
 }
@@ -80,15 +57,8 @@
 
 .tile {
   display: grid;
-  width: 100%;
   background-size: cover;
   transition: all 0.3s ease-in-out
-}
-@media only screen and (min-width: 1024px) { 
-  .tile:hover {
-    transform: scale(1.1);
-    z-index: 5;
-  }
 }
 
 .tile--cosmology {
@@ -111,10 +81,8 @@
 }
 
 .tile__descr {
-  align-self: center;
   justify-self: center;
   text-align: center;
-  width: 100%;
   height: 70%;
   padding: 15% 0;
   display: grid;
@@ -132,13 +100,6 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0);
 }
 
-@media only screen and (min-width: 768px) {
-  .exhibition__container {
-    margin: 0 auto;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @keyframes tile__hover {
   0% {transform: scale(1);}
   100% {transform: scale(1.2);}
@@ -150,12 +111,6 @@
   display: flex;
   background-color: var(--tangerine);
   margin-bottom: 20%;
-}
-
-.guided-tour img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .guided-tour > *:nth-child(2) {
@@ -191,12 +146,23 @@
   margin: auto 0;
 }
 
-.contactus div img {
-  align-self: center;
-  height: 100%;
-  width: 100%;
+@media only screen and (min-width: 1024px) {
+  .content-wrapper_info {
+    min-width: 800px;
+  }
+  .tile:hover {
+    transform: scale(1.1);
+    z-index: 5;
+  }
+  .content-wrapper__center {
+    max-width: 66%;
+    margin: 0 auto !important; 
+  }
 }
 
-.static__google-map {
-  width: 100%;
+@media only screen and (min-width: 768px) {
+  .exhibition__container {
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
