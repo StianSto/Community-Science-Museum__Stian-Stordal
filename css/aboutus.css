@@ -6,12 +6,13 @@ h1 {
 
 h1 {
   color: var(--cherry_red);
+  margin-top: 2em;
 }
 
-.aboutus__intro, .aboutus__endsection div{
+.aboutus__intro, .aboutus__endsection > div{
   display: flex;
   flex-flow: row wrap;
-  gap: 5%;
+  gap: 1em;
 }
 
 .aboutus__intro p, .aboutus__endsection div p {
@@ -22,7 +23,7 @@ h1 {
   height: inherit;
 }
 
-.aboutus__intro div, .aboutus__endsection div div {
+.aboutus__intro div, .aboutus__endsection__img {
   flex: 2;
   min-width: 200px;
   height: inherit;
@@ -37,6 +38,7 @@ h1 {
   color: white;
   padding: 10% 10px;
   margin: 10% 0;
+  overflow: hidden;
 }
 
 .aboutus__middlesection img {
@@ -44,6 +46,14 @@ h1 {
   width: calc(100% + 20px);
   position: relative;
   left: -10px;
+}
+
+.aboutus__endsection > div {
+  flex-flow: row-reverse wrap;
+}
+
+.aboutus__endsection__img {
+  order: 1;
 }
 
 /* centering desktop */
@@ -55,6 +65,6 @@ h1 {
   }
 
   .aboutus__middlesection {
-    padding: var(--page-margin-centering);
+    padding: 3em var(--page-margin-centering);
   }
 }

@@ -13,7 +13,7 @@
   --font-size-h1: clamp(2.125rem, 5.8vw + 0.856rem, 5rem);
   --font-size-h2: clamp(1.875rem, 1.6vw + 1.475rem, 2.75rem);
   --font-size-h3: clamp(1rem, 1.143vw + 0.964rem, 3rem);
-  --font-size-copy: clamp(1.125rem, 0.686vw + 0.954rem, 1.5rem);
+  --font-size-copy: clamp(1rem, 0.686vw + 0.954rem, 1.25rem);
 
   --page-margin-centering: 15%;
 }
@@ -51,6 +51,7 @@ body,
 footer {
   background-color: var(--tangerine);
   padding: 3em 2em 1em;
+  margin-top: 4em;
 }
 
 .footer__content {
@@ -79,12 +80,8 @@ footer {
 }
 
 .footer__socialmedia div {
-  height: clamp(40px, 3vw + 1rem, 100px);
+  height: clamp(40px, 1vw + 1rem, 100px);
 }
-
-/* .content-wrapper__center > * {
-  margin-top: 12rem;
-} */
 
 a {
   text-decoration: none;
@@ -94,7 +91,7 @@ a {
 
 @media only screen and (min-width: 1024px) {
   .content-wrapper__center {
-    max-width: 50%;
+    max-width: 66%;
     margin: 0 auto !important;
   }
 }
@@ -202,7 +199,6 @@ nav > ul > li:last-child {
   border: var(--intelligent_blue) solid 2px;
   padding: 15px;
   z-index: 100;
-  font-size: 1.2em;
 }
 
 .searchbar-wrapper:hover .search-input {
@@ -295,6 +291,7 @@ nav,
 .exhibition_events img,
 .aboutus__middlesection,
 .aboutus__intro img,
+.aboutus__endsection img,
 .guided-tour img,
 .contactus div img {
   height: 100%;
@@ -310,6 +307,9 @@ nav,
 /* Media queries */
 
 @media only screen and (max-width: 1023px) {
+  .content-wrapper_bodycontent {
+    margin-inline: 1rem;
+  }
   .searchbar-wrapper:hover .search-input {
     position: absolute;
     top: 92px;

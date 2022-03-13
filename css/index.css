@@ -47,6 +47,7 @@
 /* Exhibition tiles */
 .exhibition-tiles h2 {
   text-align: center;
+  margin-top: 5rem;
 }
 
 .exhibition__container {
@@ -110,7 +111,7 @@
 .guided-tour {
   display: flex;
   background-color: var(--tangerine);
-  margin-bottom: 20%;
+  margin-block: 5rem;
 }
 
 .guided-tour > *:nth-child(2) {
@@ -118,6 +119,10 @@
   min-width: 20ch;
 }
 
+.guided-tour p:nth-child(2) {
+  color: white;
+  font-size: calc(var(--font-size-copy) * 0.8);
+}
 
 /* events */
 .upcoming-events > div {

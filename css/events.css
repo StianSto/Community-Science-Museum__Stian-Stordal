@@ -1,5 +1,6 @@
 h1 {
     color: var(--cherry_red);
+    margin-block: 1em;
 }
 
 h2 {
