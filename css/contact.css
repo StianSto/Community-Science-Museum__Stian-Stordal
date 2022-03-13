@@ -1,3 +1,7 @@
+main{
+  margin-inline: 1rem;
+}
+
 h1 {
   color: var(--cherry_red); /*goes over multiple pages. move?*/
 }
@@ -19,9 +23,8 @@ h1 {
 .content-wrapper__contactus {
   display: flex;
   flex-flow: column nowrap;
-  max-width: 630px;
+  width: max-content;
   margin: 0 auto;
-  padding: 20px;
 }
 .content-wrapper__contactus > * {
   margin-right: auto;
@@ -45,7 +48,7 @@ h1 {
 }
 
 .contact__availability {
-  margin-left: calc(40px + 2em);
+  margin-left: calc(20px + 2em);
   margin-block: auto;
 }
 

@@ -64,9 +64,7 @@ footer {
 
 .footer__content p:nth-child(2),
 .footer__content p:nth-child(3),
-.toggle_btn:checked ~ p,
-.contactus div:nth-child(1),
-.contactus div:nth-child(2) {
+.toggle_btn:checked ~ p {
   margin-left: 1em;
 }
 
@@ -165,7 +163,6 @@ nav ul > li {
 }
 
 nav > ul > li:first-child,
-nav > ul > li:nth-child(3),
 nav > ul > li:last-child {
   margin-bottom: 1.4em;
 }
@@ -199,11 +196,11 @@ nav > ul > li:last-child {
   border: var(--intelligent_blue) solid 2px;
   padding: 15px;
   z-index: 100;
+  animation: searchbar 0.3s forwards;
 }
 
 .searchbar-wrapper:hover .search-input {
   min-width: 30ch;
-  animation: searchbar 0.3s forwards;
   transform-origin: 100% 50%;
 }
 
@@ -254,7 +251,7 @@ nav,
 #exhibitions-nav:checked ~ .exhibitions__list,
 .toggle_btn:checked ~ p,
 .content-wrapper__faq label,
-.searchbar-wrapper:hover .search-input  {
+.searchbar-wrapper:hover .search-input {
   display: block;
 }
 
@@ -342,10 +339,10 @@ nav,
 
 @keyframes searchbar {
   0% {
-    transform: scale(0, 1);
+    transform: scaleX(0);
   }
   100% {
-    transform: scale(1, 1);
+    transform: scaleX(1);
   }
 }
 

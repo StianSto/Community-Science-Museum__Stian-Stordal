@@ -1,7 +1,7 @@
 .aboutus__endsection,
 .aboutus__intro,
 h1 {
-  margin-inline: 10px;
+  margin-inline: 1rem;
 }
 
 h1 {
@@ -36,16 +36,16 @@ h1 {
 .aboutus__middlesection {
   background: var(--cobalt_blue);
   color: white;
-  padding: 10% 10px;
-  margin: 10% 0;
+  padding: 1rem 10px;
+  margin: 1rem 0;
   overflow: hidden;
 }
 
 .aboutus__middlesection img {
   height: calc(4rem + 20vw);
-  width: calc(100% + 20px);
+  width: calc(100% + 2rem);
   position: relative;
-  left: -10px;
+  left: -1rem;
 }
 
 .aboutus__endsection > div {
