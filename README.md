@@ -1,7 +1,6 @@
 # Community-Science-Museum__Stian-Stordal
 
-website:
-https://condescending-pike-cf9508.netlify.app
+website: https://condescending-pike-cf9508.netlify.app
 
 Prototype: <br>
 pc: https://xd.adobe.com/view/9e2e1e38-b57d-43a2-b18a-d70ed6e583ac-cb7d/ <br>
