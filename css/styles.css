@@ -62,8 +62,10 @@ footer {
   gap: 3em;
 }
 
-.footer__content p:nth-child(2),
-.footer__content p:nth-child(3),
+.footer__content p {
+  margin-block: 0.75rem;
+}
+
 .toggle_btn:checked ~ p {
   margin-left: 1em;
 }
@@ -95,47 +97,117 @@ a {
 }
 
 /* NAVBAR */
+
 .navbar {
   display: flex;
-  height: 70px;
-  width: calc(100% - 10%);
-  background-color: var(--intelligent_blue);
-  padding: 0.7em 5%;
+  height: 72px;
+  width: calc(100%);
+  /* padding: 0.7em 5%; */
   z-index: 100;
 }
+
+.navbar > * {
+  background-color: var(--intelligent_blue);
+  padding: 0.7rem;
+  display: flex;
+}
+
+.logo {
+  height: 100%;
+
+}
+
+.menu {
+  aspect-ratio: 1;
+}
+
+.hamburger-bar {
+  height: 30px;
+  aspect-ratio: 1;
+  margin-block: auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.bar {
+  --bar-height: 15%;
+  height: var(--bar-height);
+  position: absolute;
+  background: black;
+  width: 100%;
+  transition: all 200ms ease-out;
+}
+
+.bar--1 {
+  top: 0;
+}
+
+.bar--2, .bar--3 {
+  top: calc(50% - calc(var(--bar-height) 2.5px));
+}
+
+.bar--4 {
+  bottom: 0;
+}
+.bar--1.close {
+  transform: translateY(13px) scale(0);
+}
+
+.bar--4.close {
+  transform: translateY(-13px) scale(0);
+}
+
+.bar--2.close {
+  transform: rotate(45deg);
+}
+
+.bar--3.close {
+  transform: rotate(-45deg);
+}
+
+
 
 .logo-wrapper {
   flex: 1;
 }
 
-.menu {
-  margin-left: 7%;
-}
+
 
 .logo-wrapper,
-.searchbar,
-menu {
+.searchbar-wrapper,
+.menu {
   z-index: 100;
 }
-/* menu checkbox hack */
-nav label::after {
+/* menu */
+#primary-nav {
+  transform: translateY(-155%);
+}
+.animate-nav {
+  transition: all ease-out 300ms;
+}
+
+#primary-nav[data-visible="true"] {
+  transform: translateY(0%);
+}
+
+#primary-nav label::after {
   content: "+";
   margin-left: 10px;
 }
 
-nav {
+#primary-nav {
   position: absolute;
+  top: 90px;
   left: 0;
-  margin-top: 25px;
   background-color: var(--intelligent_blue);
   z-index: 1;
-  animation: navbar 0.4s alternate;
-  transition: all 0.4s ease-in;
   transform-origin: top;
 }
 
-nav li,
-nav a {
+
+
+#primary-nav li,
+#primary-nav a {
   list-style-type: none;
   color: white;
   font-family: montserrat Arial, Helvetica, sans-serif;
@@ -143,17 +215,23 @@ nav a {
   font-weight: bold;
 }
 
-nav li {
+#primary-nav li {
+}
+
+#primary-nav > ul > li {
+  margin-bottom: 10px;
   margin-left: 10%;
 }
 
-nav ul > li {
-  margin-bottom: 10px;
+.exhibitions__list {
+  display: none;
+  padding: 1rem;
 }
 
 .exhibitions__list li a {
   display: flex;
   gap: 15px;
+  margin-block: 0.3em;
 }
 
 .exhibitions__list li img {
@@ -162,10 +240,7 @@ nav ul > li {
   margin: auto 0;
 }
 
-nav > ul > li:first-child,
-nav > ul > li:last-child {
-  margin-bottom: 1.4em;
-}
+
 
 .active-li {
   text-decoration: underline;
@@ -174,13 +249,77 @@ nav > ul > li:last-child {
 }
 
 /* search */
-.searchbar-wrapper {
+.search-input {
+  position: absolute;
+  top: 72px;
+  right: 0;
+  height: 60px;
+  font-size: 1rem;
+  padding-inline: 1rem;
+  width: 100%;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 200ms ease-out;
+}
+
+.search-btn {
+  height: 100%;
+  font-size: 1.75rem;
+  padding-right: 1.5rem;
+  top: 0;
+  right: 0;
+  display: flex;
+}
+
+@media only screen and (min-width:769px) {
+  .searchbar-wrapper {
+    flex: 1;
+  }
+
+  .searchbar {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .search-input {
+    position: relative;
+    height: 100%;
+    top: 0px;
+    flex: 1;
+  }
+  
+  .search-btn {
+    height: 100%;
+    font-size: 1.75rem;
+    padding-right: 1.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+  }
+
+}
+
+
+
+
+
+/* .searchbar-wrapper {
   height: 60%;
   min-width: 50px;
+  flex: 1;
+}
+
+.searchbar {
+  position: relative;
 }
 
 .search-btn {
   height: inherit;
+  position: absolute;
   top: 0;
   right: 0;
   padding-right: 5px;
@@ -207,7 +346,7 @@ nav > ul > li:last-child {
 .search-input::-webkit-search-cancel-button {
   position: relative;
   right: 20px;
-}
+} */
 
 /* goes over multiple pages */
 /* upcoming events */
@@ -237,26 +376,16 @@ nav > ul > li:last-child {
 }
 
 /* DRY */
-#hamburger-menu,
-nav,
-#exhibitions-nav,
-.exhibitions__list,
-.search-input,
 .toggle_btn,
 .toggle_btn ~ p {
   display: none;
 }
 
-#hamburger-menu:checked ~ nav,
-#exhibitions-nav:checked ~ .exhibitions__list,
 .toggle_btn:checked ~ p,
-.content-wrapper__faq label,
-.searchbar-wrapper:hover .search-input {
+.content-wrapper__faq label {
   display: block;
 }
 
-.menu,
-.searchbar-wrapper,
 .fa-search,
 .tile__descr,
 .contactus div img {
@@ -266,7 +395,6 @@ nav,
 .exhibition_events img,
 .footer__socialmedia div,
 nav,
-.search-input,
 .main__aboutus img,
 .guided-tour img,
 .contactus div img,
@@ -280,11 +408,8 @@ nav,
   width: 100%;
 }
 
-.logo,
 .menu__icon img,
-.searchbar__icon,
 .footer__socialmedia img,
-.searchbar,
 .exhibition_events img,
 .aboutus__middlesection,
 .aboutus__intro img,
@@ -303,54 +428,50 @@ nav,
 
 /* Media queries */
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (min-width: 769px) {
+  .navbar {
+    --nav-height: 90px;
+    height: var(--nav-height);
+  }
+
+
+}
+
+@media only screen and (max-width: 769px) {
   .content-wrapper_bodycontent {
     margin-inline: 1rem;
   }
-  .searchbar-wrapper:hover .search-input {
-    position: absolute;
-    top: 92px;
-    height: 60px;
-    width: 100%;
-    left: 0;
-    margin-right: 0;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+
+  #primary-nav {
+    top: 70px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .searchbar {
+/*   .searchbar {
     position: relative;
     height: 100%;
   }
-  .search-btn {
-    position: absolute;
-  }
+
   .search-input {
     border-radius: 4px;
-  }
-  .searchbar-wrapper {
-    flex: 1;
-  }
+  } */
+
   .content-wrapper__contactus {
     flex-flow: row wrap;
   }
 }
 
-@keyframes searchbar {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
 
-@keyframes navbar {
-  0% {
-    transform: scaleY(0);
+/* utility classes */
+  .display {
+    opacity: 1;
+    transform: scale(1);
   }
-  100% {
-    transform: scaleY(1);
+
+  .display-block {
+    display: block;
   }
-}
+
+ 
+
