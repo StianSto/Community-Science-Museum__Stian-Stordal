@@ -1,12 +1,6 @@
-.aboutus__endsection,
-.aboutus__intro,
-h1 {
-  margin-inline: 1rem;
-}
-
 h1 {
   color: var(--cherry_red);
-  margin-top: 2em;
+  margin: 2em 0 0 1rem;
 }
 
 .aboutus__intro, .aboutus__endsection > div{
