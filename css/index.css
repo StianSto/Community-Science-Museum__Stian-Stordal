@@ -20,6 +20,7 @@
 }
 
 .hero__text {
+  padding: 5rem 1rem 1rem;
   width: 100%;
   background: url(../assets/images/img_hero_starrynightsky.png) bottom;
   background-size: cover;
@@ -29,6 +30,7 @@
 
 .hero h1 {
   line-height: 1;
+  font-size: clamp(3rem, 5vw + 1rem, 8rem);
 }
 
 .hero__text p {
@@ -86,6 +88,10 @@
   grid-template-rows: 1fr 30%;
 }
 
+.tile:hover {
+  transform: scale(1.1);
+}
+
 .tile__icon {
   width: 45%;
   place-self: center;
@@ -95,15 +101,6 @@
 .tile__descr h3 {
   margin: 0 auto;
   text-shadow: 2px 2px 5px rgba(0, 0, 0);
-}
-
-@keyframes tile__hover {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
-  }
 }
 
 /* guide - paper tile */
