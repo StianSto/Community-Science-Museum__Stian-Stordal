@@ -1,7 +1,9 @@
 // this code is inpsired by w3schools : https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-const header = document.querySelector("header")
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
+window.onscroll = function hideHeader() {
+    const header = document.querySelector("header");
+    const navIsVisible = navMenu.getAttribute("data-visible");
+
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > "120") {
         if (prevScrollpos > currentScrollPos) {
@@ -9,6 +11,10 @@ window.onscroll = function() {
         } else {
             header.style.top = "-100px";
         }
+    }
+    if(navIsVisible === "true") {
+        console.log(2)
+        disableScroll();
     }
     prevScrollpos = currentScrollPos;
 }
@@ -26,10 +32,11 @@ function disableScroll() {
 }
 
 function enableScroll() {
-    window.onscroll = function() {};
+    window.onscroll = function() {}; hideHeader();
 }
 
 function makeHeader() {
+    const header = document.querySelector("header");
     header.innerHTML = `
     <div class="navbar">
         <a href="index.html" class="logo-wrapper">
@@ -80,10 +87,6 @@ function makeHeader() {
 makeHeader();
 
 
-
-
-
-
 const searchBtn = document.querySelector(".search-btn");
 const searchInput = document.querySelector(".search-input");
 
@@ -111,8 +114,6 @@ navMenuBtn.addEventListener("click", () => {
     if(navIsVisible === "false") {
         navMenu.setAttribute("data-visible", true);
         navMenu.setAttribute("aria-expanded", true);
-
-        disableScroll();
 
     } else {
         navMenu.setAttribute("data-visible", false);

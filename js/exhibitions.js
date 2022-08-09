@@ -274,39 +274,39 @@ const exhibitionID = parseFloat(parameter.get("id"));
 function makeExhibitionSite() {
     const exhibition = exhibitions.find((exhibition => exhibition.id === exhibitionID));
 
-    console.log(exhibition);
-
     let staff = "";
-    exhibition.staff.forEach(p => {
-    
-        let staffHtml =`
-        <div class="profile pr_tobi-wan">
-            <img src="${p.profileImg}" alt="image of a happy man with dark hair and tan skin">
-            <p><b>${p.name}</b></p>
-            <p>${p.title}</p>
-            <p>${p.email}</p>
-        </div>
-        `
-
-        staff += staffHtml;
-        })
-
-    
-    let events = "";
-    exhibition.events.forEach(e => {
-
-        let eventHtml = `
-        <div>
-            <div class="exhibition_events__img">
-                <img src="assets/images/img_neptune_event.jpg" alt="image of a blue planet known as Neptune">
+    if (exhibition.staff) {
+        exhibition.staff.forEach(p => {
+        
+            let staffHtml =`
+            <div class="profile pr_tobi-wan">
+                <img src="${p.profileImg}" alt="image of a happy man with dark hair and tan skin">
+                <p><b>${p.name}</b></p>
+                <p>${p.title}</p>
+                <p>${p.email}</p>
             </div>
-            <p><b></b></p>
-            <p>Learn about the blue gas giant that is part of our solar system</p>
-            <p>6 pm, room 325</p>
-        </div>
-        `
-        events += eventHtml;
-    })
+            `
+
+            staff += staffHtml;
+            })}
+
+    console.log(exhibition.events)
+        let events = "";
+    // if (exhibition.events) {
+    //     exhibition.events.forEach(e => {
+
+    //         let eventHtml = `
+    //         <div>
+    //             <div class="exhibition_events__img">
+    //                 <img src="assets/images/img_neptune_event.jpg" alt="image of a blue planet known as Neptune">
+    //             </div>
+    //             <p><b></b></p>
+    //             <p>Learn about the blue gas giant that is part of our solar system</p>
+    //             <p>6 pm, room 325</p>
+    //         </div>
+    //         `
+    //         events += eventHtml;
+    //     })}
 
 
 
