@@ -2,9 +2,6 @@
 
 ![image](assets/images/LogoCSM.png)
 
-
-website: https://rainydays-ss.netlify.app/
-
 ## Description
 This website was made during my first year as a front–end dev student, and was my second try at creating a website.
 CSM is a fictional website for a local science museum that wants to further engage children and families in learning and exploring the wonders of this world. The site is bright and colorful, but not in a very childish way. 
