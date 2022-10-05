@@ -1,6 +1,6 @@
 # Community Science Museum
 
-![image](assets/images/LogoCSM.png)
+![csm-logo-readme](https://user-images.githubusercontent.com/95475303/194053987-4a18a3f8-3037-45a5-8489-9761b9651fe0.svg)
 
 ## Description
 This website was made during my first year as a front–end dev student, and was my second try at creating a website.
