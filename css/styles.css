@@ -156,7 +156,8 @@ header {
 }
 
 .bar--2, .bar--3 {
-  top: calc(50% - calc(var(--bar-height) 2.5px));
+  top: calc(50% - var(--bar-height));
+  transform: translateY(50%);
 }
 
 .bar--4 {
