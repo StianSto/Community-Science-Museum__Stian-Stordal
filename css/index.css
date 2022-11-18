@@ -20,7 +20,7 @@
 }
 
 .hero__text {
-  padding: 5rem 1rem 1rem;
+  padding: 5rem 1rem 1rem min(3rem, 4vw);
   width: 100%;
   background: url(../assets/images/img_hero_starrynightsky.png) bottom;
   background-size: cover;
